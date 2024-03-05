@@ -1,0 +1,63 @@
+criar pasta
+
+npx create-next-app@latest .
+
+verificar a version do node - instalar a mais atual
+
+npm run dev
+
+src/app/page.tsx - página home
+src/app/layout.tsx - root layout do app
+
+// Routing and navigation //
+
+-- rota estática 
+
+src/app/post/page.tsx;
+layout.tsx não é obrigatório - apenas na raíz
+
+-- rota dinâmica 
+
+src/app/post/[id]/page.tsx;
+not-found.tsx
+
+<Link /> import Link from 'next/link' 
+
+
+usePathname - utilizado no client side
+
+use client'
+ 
+import { usePathname } from 'next/navigation'
+export default function ExampleClientComponent() {
+  const pathname = usePathname()
+  return <p>Current pathname: {pathname}</p>
+}
+
+useParams - utilizado no server side
+
+// Metada 
+
+export const metada: Metadata = {
+  title: '',
+  description: ''
+}
+
+// Image
+
+se o src vier de um link externo vai dar erro
+
+remotePatterns
+
+deve ir en next.config.js e acrescentar:
+
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'example.com',
+        port: '',
+        pathname: '/account123/**',
+      },
+    ],
+  },
