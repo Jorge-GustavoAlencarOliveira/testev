@@ -24,6 +24,5 @@ export async function POST (request: Request, response: Response){
         email: true,
       }
     })
-  return Response.json({message: 'ok', user})
-
+    return Response.json({message: 'ok', user})
 }
