@@ -1,10 +1,7 @@
 import { Suspense } from 'react';
 import PostList from './postList';
+import prisma from './prisma';
 
-type userprops = {
-  name: string;
-  email: string
-}
 
 export default async function Home() {
   const data = await prisma?.user.findMany()
