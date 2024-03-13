@@ -1,26 +1,17 @@
-import prisma from './prisma';
-import Form from './components/form';
-import Button from './components/button';
+import Link from "next/link"
 
-export default async function Home() {
-
-  const data = await prisma?.user.findMany();
-
+const Home = () => {
   return (
-    <main>
-      <Form/>
-      {data?.map((item) => {
-        return (
-          <div
-            key={item.id}
-            style={{ display: 'flex', flexDirection: 'column' }}
-          >
-            <span>nome: {item.name}</span>
-            <span>email: {item.email}</span>
-            <Button id={item.id}/>
-          </div>
-        );
-      })}
-    </main>
-  );
+    <>
+      <nav>
+        <Link href='/login/signin'>Login</Link>
+        <Link href='/login/signup'>SignUp</Link>
+      </nav>
+    </>
+  )
 }
+
+export default Home
+
+
+
